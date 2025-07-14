@@ -32,3 +32,27 @@ This notebook dives into analytic differentiation using the SymPy library and co
 - **Vector distance sanity-check** – Generates two random 3-D NumPy vectors and prints their Euclidean distance to illustrate links between gradients and embedding geometry.
 
 Overall, Day 2 reinforces core calculus operations (derivatives, gradients, Hessians) in SymPy and shows how to bridge symbolic results to numerical workflows common in modern ML pipelines.
+
+## Day3_Symbolic_Gradients_Embeddings.ipynb – Gradients, Embeddings & Bias Checks
+
+Day 3 builds on the previous notebooks by marrying symbolic calculus with vector-space operations that are common in modern ML systems.
+
+- **Warm-up recap** – revisits univariate differentiation (`f(x)=x²+sin x`) and prints the derivative using SymPy to reinforce Day 2 concepts.
+
+- **Multivariable extension**
+
+  - Defines `g(x,y)=x²y+cos(xy)` and symbolically derives ∂g/∂x, ∂g/∂y, and the full gradient vector.
+
+- **Embedding-style loss**
+
+  - Symbolically differentiates a mean-squared-error-like loss `L=(v₁−v₂)²`, yielding the familiar `2 (v₁−v₂)` gradient—highlighting links between calculus and embedding optimizers.
+
+- **Embedding simulator**
+
+  - Generates 100 random 5-D NumPy vectors.
+  - Computes Euclidean and cosine distances pair-wise, plus a quick scatter plot (2-D projection) for intuition about cluster structure.
+
+- **Responsible-AI quick check**
+  - Splits embeddings into two label groups (0/1) and computes average intra-group cosine distance as a lightweight bias flag. (Placeholder for Fairlearn-style metrics later.)
+
+This notebook bridges symbolic math with practical embedding workflows and introduces an initial fairness metric, laying groundwork for downstream ethical AI discussions.
